@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <title>CSS Filter Experiments by Houke de Kwant</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <meta property="og:type" content="website"/>
+        <meta property="og:site_name" content="Weblab of Houke de Kwant"/>
+		<meta property="og:title" content="CSS3 Filter Experiments by Houke de Kwant"/>
+		<meta property="og:image" content="http://houkedekwant.com/weblab/html5.png"/>
+		<meta property="og:url" content="http://houkedekwant.com/weblab/css3-filter-experiments/"/>
+		<meta property="fb:admins" content="100000491875326"/>
+		<meta property="fb:app_id" content="476702769014879"/>
+		<meta property="og:description" content="On this page you will be able to see the different CSS filters which I used as experiment for the upcoming Daily Inspiration layout (ETA dec. 2012). They won't make it in the final version due to limited support, so I decided to show the effects here, on my personal website. On this tab you can play with the sliders to create your own effects. Keep in mind that if you use to many filters at once the browser may become very slow."/>
+
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="shortcut icon" href="http://houkedekwant.com/boilerplate/favicon.ico">
+        <link href='http://fonts.googleapis.com/css?family=Archivo+Narrow:400,700,400italic' rel='stylesheet' type='text/css'> 
+        <script src="js/vendor/modernizr-2.6.1.min.js"></script>
+        <script type="text/javascript">
+
+			  var _gaq = _gaq || [];
+			  _gaq.push(['_setAccount', 'UA-15882700-6']);
+			  _gaq.push(['_trackPageview']);
+			
+			  (function() {
+			    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			  })();
+		
+		</script>
+    </head>
+    <body>
+    <div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=476702769014879";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        <aside>
+	        <h1>Css Filter Experiments</h1>
+	        <h2>by <a href="http://houkedekwant.com/">Houke de Kwant</a></h2>
+	        <ul>
+		        <li><a href="#" class="active" id="Playground">The filters</a></li>
+		        <li><a href="#" id="Blur">Blur</a></li>
+		        <li><a href="#" id="Grayscale">Grayscale</a></li>
+		        <li><a href="#" id="Brightness">Brightness</a></li>
+		        <li><a href="#" id="Contrast">Contrast</a></li>
+		        <li><a href="#" id="Drop-shadow">Drop-shadow</a></li>
+		        <li><a href="#" id="Sepia">Sepia</a></li>
+		        <li><a href="#" id="Hue-rotate">Hue-rotate</a></li>
+		        <li><a href="#" id="Invert">Invert</a></li>
+		        <li><a href="#" id="Opacity">Opacity</a></li>
+		        <li><a href="#" id="Saturate">Saturate</a></li>
+	        </ul>
+	        <a href="http://www.w3.org/html/logo/" class="html5logo" target="_blank">
+	        	<img src="img/html5-badge-h-css3-graphics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Graphics, 3D &amp; Effects" title="HTML5 Powered with CSS3 / Styling, and Graphics, 3D &amp; Effects">
+	       </a>
+	       <div class="social">
+	       		<div class="fb-like" data-href="http://houkedekwant.com/weblab/css3-filter-experiments/" data-send="false" data-layout="button_count" data-width="120" data-show-faces="false" data-font="segoe ui"></div>
+	       		<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://houkedekwant.com/weblab/css3-filter-experiments/" data-text="CSS3 Filter Experiments by Houke de Kwant (Best viewed in -webkit browsers)" data-via="houkedekwant">Tweet</a>
+	       </div>
+        </aside>
+        <div id="images">
+        	<div class="close">X</div>
+	        <ul>
+		        <li class="img1"></li>
+		        <li class="img2"></li>
+		        <li class="img3"></li>
+		        <li class="img4"></li>
+	        </ul>
+		    <input type="url" placeholder="Url to your image">
+		    <input type="submit" value="Submit">
+        </div>
+        <div id="overlay"></div>
+        <div id="message">Your browser doesn't support CSS Filters, you can still take a look at the code and play with the sliders, but you won't see any changes. Please use <a href="https://www.google.com/intl/en/chrome/browser/" target="_blank">Google Chrome</a> or <a href="http://www.apple.com/safari/" target="_blank">Safari</a> (only on a mac)!</div>
+        <section class="examples clearfix" id="content">
+	        <div class="hack"></div>
+	       <article class="Playground clearfix">
+		        <div class="top-examples">
+		        	<p><strong>At the moment of writing CSS Filters are only supported by -webkit browsers, so to be able to see the effects, please use Chrome or Safari! I have included all prefixes in each example, you never now when other browsers are going to support this, but for now they won't work ;).</strong></p>
+		        	<p>On this page you will be able to see the different CSS filters which I used as experiment for the upcoming Daily Inspiration layout (ETA dec. 2012). They won't make it in the final version due to limited support, so I decided to show the effects here, on my personal website. On this tab you can play with the sliders to create your own effects. Keep in mind that if you use to many filters at once the browser may become very slow.</p>
+		        	<p>You can change the images if you want, simply click on an image, a pop-up will open showing you 4 images from my website and an input field. Click on any of the 4 images to change them, or enter a valid image url in the input field and when you hit submit the images will change.</p>
+		        </div>
+			        <div class="col home">
+				        <div class="effect"></div>
+				        <div class="controls">
+				        		<h6>Blur control<span class="filterr"></span></h6>
+				        		<div class="Blur slider clearfix"></div>
+				        		<h6>Grayscale control<span class="filterr"></span></h6>
+				       	 		<div class="Grayscale slider clearfix"></div>
+				        		<h6>Brightness control<span class="filterr"></span></h6>
+				       	 		<div class="Brightness slider clearfix"></div>
+				        		<h6>Contrast control<span class="filterr"></span></h6>
+				       	 		<div class="Contrast slider clearfix"></div>
+				        		<h6>Drop-shadow control<span class="filterr"></span></h6>
+				       	 		<div class="Drop-shadow slider clearfix"></div>
+				        		<h6>Sepia control<span class="filterr"></span></h6>
+				       	 		<div class="Sepia slider clearfix"></div>
+				        		<h6>Hue-rotate control<span class="filterr"></span></h6>
+				       	 		<div class="Hue-rotate slider clearfix"></div>
+				        		<h6>Invert control<span class="filterr"></span></h6>
+				       	 		<div class="Invert slider clearfix"></div>
+				        		<h6>Opacity control<span class="filterr"></span></h6>
+				       	 		<div class="Opacity slider clearfix"></div>
+				        		<h6>Saturate control<span class="filterr"></span></h6>
+				       	 		<div class="Saturate slider clearfix"></div>
+				       	 		<p class="reset">Reset all filters</p>
+				        </div>
+			        </div>
+	       </article>
+	       
+	        <article class="Blur clearfix">
+		        <div class="top-examples">
+		        	<h6>Without effect</h6>
+			        <div class="col no-blur">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: none;
+  -ms-filter: none;
+  -moz-filter: none;
+  -o-filter: none;
+  filter: none;
+}</pre>
+			        </div>
+		        	<h6>With effect</h6>
+			        <div class="col full-blur">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: blur(5px);
+  -ms-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  filter: blur(5px);
+}</pre>
+				    </div>
+		        	<h6>Show effect onhover</h6>
+			        <div class="col hover-blur">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: blur(0px);
+  -ms-filter: blur(0px);
+  -moz-filter: blur(0px);
+  -o-filter: blur(0px);
+  filter: blur(0px);
+}
+
+.effect:hover{
+  -webkit-filter: blur(5px);
+  -ms-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  filter: blur(5px);
+}</pre>
+				    </div>
+		        	<h6>Show effect onhover, animated</h6>
+			        <div class="col hover-blur-anim">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: blur(0px);
+  -ms-filter: blur(0px);
+  -moz-filter: blur(0px);
+  -o-filter: blur(0px);
+  filter: blur(0px);
+  -webkit-transition: 0.5s linear all;
+  -moz-transition: 0.5s linear all;
+  -o-transition: 0.5s linear all;
+  -ms-transition: 0.5s linear all;
+  transition: 0.5s linear all;
+}
+
+.effect:hover{
+  -webkit-filter: blur(5px);
+  -ms-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  filter: blur(5px);
+}</pre>
+				    </div>
+		        	<h6>Control the effect</h6>
+			        <div class="col hover-blur-control">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: blur(0px);
+  -ms-filter: blur(0px);
+  -moz-filter: blur(0px);
+  -o-filter: blur(0px);
+  filter: blur(0px);
+}</pre>
+				        <div class="slider clearfix"></div>
+				    </div>
+		        </div>
+		        <div class="code"><span class="codeopen">i</span>
+			        <p>The blur effect is almost the same effect as using 'Gaussian Blur' (Filter > Blur > Gaussian Blur) in photoshop. You can enter a value in px, the higher the value the more blurrier the image. A value of zero will output the same as -webkit-filter: none... No blur at all. </p>
+		        </div>
+	        </article>
+	        
+	        
+	        <article class="Grayscale">
+		        <div class="top-examples">
+		        	<h6>Without effect</h6>
+			        <div class="col no-grayscale">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: none;
+  -ms-filter: none;
+  -moz-filter: none;
+  -o-filter: none;
+  filter: none;
+}</pre>  
+			        </div>
+		        	<h6>With effect</h6>
+			        <div class="col full-grayscale">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: grayscale(1);
+  -ms-filter: grayscale(1);
+  -moz-filter: grayscale(1);
+  -o-filter: grayscale(1);
+  filter: grayscale(1);
+}</pre>      
+				    </div>
+		        	<h6>Show effect onhover</h6>
+			        <div class="col hover-grayscale">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: grayscale(0);
+  -ms-filter: grayscale(0);
+  -moz-filter: grayscale(0);
+  -o-filter: grayscale(0);
+  filter: grayscale(0);
+}
+
+.effect:hover{
+  -webkit-filter: grayscale(1);
+  -ms-filter: grayscale(1);
+  -moz-filter: grayscale(1);
+  -o-filter: grayscale(1);
+  filter: grayscale(1);
+}</pre>   
+				    </div>
+		        	<h6>Show effect onhover, animated</h6>
+			        <div class="col hover-grayscale-anim">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: grayscale(0);
+  -ms-filter: grayscale(0);
+  -moz-filter: grayscale(0);
+  -o-filter: grayscale(0);
+  filter: grayscale(0);
+  -webkit-transition: 0.5s linear all;
+  -moz-transition: 0.5s linear all;
+  -o-transition: 0.5s linear all;
+  -ms-transition: 0.5s linear all;
+  transition: 0.5s linear all;
+}
+
+.effect:hover{
+  -webkit-filter: grayscale(1);
+  -ms-filter: grayscale(1);
+  -moz-filter: grayscale(1);
+  -o-filter: grayscale(1);
+  filter: grayscale(1);
+}</pre>   
+				    </div>
+		        	<h6>Control the effect</h6>
+			        <div class="col hover-grayscale-control grayscale">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+   -webkit-filter: grayscale(0);
+  -ms-filter: grayscale(0);
+  -moz-filter: grayscale(0);
+  -o-filter: grayscale(0);
+  filter: grayscale(0);
+}</pre>
+					<div class="slider clearfix"></div>
+				    </div>
+				    
+		        </div>
+		        <div class="code"><span class="codeopen">i</span>
+			        <p>The grayscale effect converts colors to a shade of gray, the number between brackets decides how much gray conversion is applied. The range is between 0 (for no gray conversion) to 1 (for full conversion). If you're more comfortable using percentages, that's possible as well, you can use 0% till 100% or 0 till 1 (and all values in-between). Both will work.</p>
+		        </div>
+		    </article>
+		    
+		    
+	        <article class="Brightness">
+		        <div class="top-examples">
+		        	<h6>Without effect</h6>
+			        <div class="col no-brightness">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: none;
+  -ms-filter: none;
+  -moz-filter: none;
+  -o-filter: none;
+  filter: none;
+}</pre>       
+			        </div>
+		        	<h6>With effect</h6>
+			        <div class="col full-brightness">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: brightness(0.9);
+  -ms-filter: brightness(0.9);
+  -moz-filter: brightness(0.9);
+  -o-filter: brightness(0.9);
+  filter: brightness(0.9);
+}</pre>  
+				    </div>
+		        	<h6>Show effect onhover</h6>
+			        <div class="col hover-brightness">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: brightness(0);
+  -ms-filter: brightness(0);
+  -moz-filter: brightness(0);
+  -o-filter: brightness(0);
+  filter: brightness(0);
+}
+
+.effect:hover{
+  -webkit-filter: brightness(0.9);
+  -ms-filter: brightness(0.9);
+  -moz-filter: brightness(0.9);
+  -o-filter: brightness(0.9);
+  filter: brightness(0.9);
+}</pre>  
+				    </div>
+		        	<h6>Show effect onhover, animated</h6>
+			        <div class="col hover-brightness-anim">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: brightness(0);
+  -ms-filter: brightness(0);
+  -moz-filter: brightness(0);
+  -o-filter: brightness(0);
+  filter: brightness(0);
+  -webkit-transition: 0.5s linear all;
+  -moz-transition: 0.5s linear all;
+  -o-transition: 0.5s linear all;
+  -ms-transition: 0.5s linear all;
+  transition: 0.5s linear all;
+}
+
+.effect:hover{
+  -webkit-filter: brightness(0.9);
+  -ms-filter: brightness(0.9);
+  -moz-filter: brightness(0.9);
+  -o-filter: brightness(0.9);
+  filter: brightness(0.9);
+}</pre>  
+				    </div>
+		        	<h6>Control the effect</h6>
+			        <div class="col hover-brightness-control">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: brightness(0);
+  -ms-filter: brightness(0);
+  -moz-filter: brightness(0);
+  -o-filter: brightness(0);
+  filter: brightness(0);
+}</pre>  
+					<div class="slider clearfix"></div>
+				    </div>
+		        </div>
+		        <div class="code"><span class="codeopen">i</span>
+			        <p>Brightness can go two ways, in my examples I went from 0 to 0.9 (the max is 1.0, which will make the image completely white). But you can go from o to -1 as well, which will make the image totally black. Going higher will make the image lighter, going lower will make it darker. If you're more comfortable using percentages, that's possible as well, you can use 0% till 100% or 0 till 1 (and all values in-between). Both will work.</p>
+		        </div>
+		    </article>
+	        <article class="Contrast">
+		        <div class="top-examples">
+		        	<h6>Without effect</h6>
+			        <div class="col no-contrast">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: none;
+  -ms-filter: none;
+  -moz-filter: none;
+  -o-filter: none;
+  filter: none;
+}</pre>
+			        </div>
+		        	<h6>With effect</h6>
+			        <div class="col full-contrast">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: contrast(10);
+  -ms-filter: contrast(10);
+  -moz-filter: contrast(10);
+  -o-filter: contrast(10);
+  filter: contrast(10);
+}</pre>
+				    </div>
+		        	<h6>Show effect onhover</h6>
+			        <div class="col hover-contrast">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: contrast(1);
+  -ms-filter: contrast(1);
+  -moz-filter: contrast(1);
+  -o-filter: contrast(1);
+  filter: contrast(1);
+}
+
+.effect:hover{
+  -webkit-filter: contrast(10);
+  -ms-filter: contrast(10);
+  -moz-filter: contrast(10);
+  -o-filter: contrast(10);
+  filter: contrast(10);
+}</pre>
+				    </div>
+		        	<h6>Show effect onhover, animated</h6>
+			        <div class="col hover-contrast-anim">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: contrast(1);
+  -ms-filter: contrast(1);
+  -moz-filter: contrast(1);
+  -o-filter: contrast(1);
+  filter: contrast(1);
+  -webkit-transition: 0.5s linear all;
+  -moz-transition: 0.5s linear all;
+  -o-transition: 0.5s linear all;
+  -ms-transition: 0.5s linear all;
+  transition: 0.5s linear all;
+}
+
+.effect:hover{
+  -webkit-filter: contrast(10);
+  -ms-filter: contrast(10);
+  -moz-filter: contrast(10);
+  -o-filter: contrast(10);
+  filter: contrast(10);
+}</pre>
+				    </div>
+		        	<h6>Control the effect</h6>
+			        <div class="col hover-contrast-control">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: contrast(1);
+  -ms-filter: contrast(1);
+  -moz-filter: contrast(1);
+  -o-filter: contrast(1);
+  filter: contrast(1);
+}</pre>
+					<div class="slider clearfix"></div>
+				    </div>
+		        </div>
+		        <div class="code"><span class="codeopen">i</span>
+			        <p>This will adjust the difference between the darkest and lightest parts of the element you use the filter on. It seems like there is no end value for this, but after using 10 I didn't see much difference, so I used that in my examples. If you use 0 your image will be completely grey, 1 will be the normal state and then it seems like you can go as high as you want. If you're more comfortable using percentages, that's possible as well, you can use 0% till 'x'% or 0 till 'x' (and all values in-between). Both will work.</p>
+		        </div>
+		    </article>
+		    
+		    
+	        <article class="Drop-shadow">
+		        <div class="top-examples">
+		        	<h6>Without effect</h6>
+			        <div class="col no-drop-shadow">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: none;
+  -ms-filter: none;
+  -moz-filter: none;
+  -o-filter: none;
+  filter: none;
+}</pre>
+			        </div>
+		        	<h6>With effect</h6>
+			        <div class="col full-drop-shadow">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: drop-shadow(5px 5px 5px black);
+  -ms-filter:  drop-shadow(5px 5px 5px black);
+  -moz-filter:  drop-shadow(5px 5px 5px black);
+  -o-filter:  drop-shadow(5px 5px 5px black);
+  filter:  drop-shadow(5px 5px 5px black);
+}</pre>
+				    </div>
+		        	<h6>Show effect onhover</h6>
+			        <div class="col hover-drop-shadow">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: drop-shadow(0px 0px 0px black);
+  -ms-filter:  drop-shadow(0px 0px 0px black);
+  -moz-filter:  drop-shadow(0px 0px 0px black);
+  -o-filter:  drop-shadow(0px 0px 0px black);
+  filter:  drop-shadow(0px 0px 0px black);
+}
+
+.effect:hover{
+  -webkit-filter: drop-shadow(5px 5px 5px black);
+  -ms-filter:  drop-shadow(5px 5px 5px black);
+  -moz-filter:  drop-shadow(5px 5px 5px black);
+  -o-filter:  drop-shadow(5px 5px 5px black);
+  filter:  drop-shadow(5px 5px 5px black);
+}</pre>
+				    </div>
+		        	<h6>Show effect onhover, animated</h6>
+			        <div class="col hover-drop-shadow-anim">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: drop-shadow(0px 0px 0px black);
+  -ms-filter:  drop-shadow(0px 0px 0px black);
+  -moz-filter:  drop-shadow(0px 0px 0px black);
+  -o-filter:  drop-shadow(0px 0px 0px black);
+  filter:  drop-shadow(0px 0px 0px black);
+  -webkit-transition: 0.5s linear all;
+  -moz-transition: 0.5s linear all;
+  -o-transition: 0.5s linear all;
+  -ms-transition: 0.5s linear all;
+  transition: 0.5s linear all;
+}
+
+.effect:hover{
+  -webkit-filter: drop-shadow(5px 5px 5px black);
+  -ms-filter:  drop-shadow(5px 5px 5px black);
+  -moz-filter:  drop-shadow(5px 5px 5px black);
+  -o-filter:  drop-shadow(5px 5px 5px black);
+  filter:  drop-shadow(5px 5px 5px black);
+}</pre>
+				    </div>
+		        	<h6>Control the effect</h6>
+			        <div class="col hover-drop-shadow-control">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: drop-shadow(0px 0px 0px black);
+  -ms-filter:  drop-shadow(0px 0px 0px black);
+  -moz-filter:  drop-shadow(0px 0px 0px black);
+  -o-filter:  drop-shadow(0px 0px 0px black);
+  filter:  drop-shadow(0px 0px 0px black);
+}</pre>
+					<div class="slider clearfix"></div>
+				    </div>
+		        </div>
+		        <div class="code"><span class="codeopen">i</span>
+			        <p>At first sight the output of this filter seems exactly the same as using the easier to use box-shadow. However, this drop-shadow is much better when you're using transparant images. Drop-shadow will follow the borders of the image itself, box-shadow will follow the border of the image-container. Read <a href="http://demosthenes.info/blog/598/boxshadow-property-vs-dropshadow-filter-a-complete-comparison" target="_blank">this post</a> to understand what I mean. Hovering with an animated effect seems a little buggy for this one.</p>
+		        </div>
+		   </article>
+	        
+	        
+	        <article class="Sepia">
+		        <div class="top-examples">
+		        	<h6>Without effect</h6>
+			        <div class="col no-sepia">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: none;
+  -ms-filter: none;
+  -moz-filter: none;
+  -o-filter: none;
+  filter: none;
+}</pre>
+			        </div>
+		        	<h6>With effect</h6>
+			        <div class="col full-sepia">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: sepia(1);
+  -ms-filter: sepia(1);
+  -moz-filter: sepia(1);
+  -o-filter: sepia(1);
+  filter: sepia(1);
+}</pre>
+				    </div>
+		        	<h6>Show effect onhover</h6>
+			        <div class="col hover-sepia">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: sepia(0);
+  -ms-filter: sepia(0);
+  -moz-filter: sepia(0);
+  -o-filter: sepia(0);
+  filter: sepia(0);
+}
+
+.effect:hover{
+  -webkit-filter: sepia(1);
+  -ms-filter: sepia(1);
+  -moz-filter: sepia(1);
+  -o-filter: sepia(1);
+  filter: sepia(1);
+}</pre>
+				    </div>
+		        	<h6>Show effect onhover, animated</h6>
+			        <div class="col hover-sepia-anim">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: sepia(0);
+  -ms-filter: sepia(0);
+  -moz-filter: sepia(0);
+  -o-filter: sepia(0);
+  filter: sepia(0);
+  -webkit-transition: 0.5s linear all;
+  -moz-transition: 0.5s linear all;
+  -o-transition: 0.5s linear all;
+  -ms-transition: 0.5s linear all;
+  transition: 0.5s linear all;
+}
+
+.effect:hover{
+  -webkit-filter: sepia(1);
+  -ms-filter: sepia(1);
+  -moz-filter: sepia(1);
+  -o-filter: sepia(1);
+  filter: sepia(1);
+}</pre>
+				    </div>
+		        	<h6>Control the effect</h6>
+			        <div class="col hover-sepia-control">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: sepia(0);
+  -ms-filter: sepia(0);
+  -moz-filter: sepia(0);
+  -o-filter: sepia(0);
+  filter: sepia(0);
+}</pre>
+					<div class="slider clearfix"></div>
+				    </div>
+		        </div>
+		        <div class="code"><span class="codeopen">i</span>
+			        <p>This works exactly the same as the grayscale filter, you can use the same values, with the difference that the output is sepia toned.</p>
+		        </div>
+		    </article>
+		    
+		    
+	        <article class="Hue-rotate">
+		        <div class="top-examples">
+		        	<h6>Without effect</h6>
+			        <div class="col no-hue-rotate">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: none;
+  -ms-filter: none;
+  -moz-filter: none;
+  -o-filter: none;
+  filter: none;
+}</pre>
+			        </div>
+		        	<h6>With effect</h6>
+			        <div class="col full-hue-rotate">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: hue-rotate(180deg);
+  -ms-filter: hue-rotate(180deg);
+  -moz-filter: hue-rotate(180deg);
+  -o-filter: hue-rotate(180deg);
+  filter: hue-rotate(180deg);
+}</pre>
+				    </div>
+		        	<h6>Show effect onhover</h6>
+			        <div class="col hover-hue-rotate">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: hue-rotate(deg);
+  -ms-filter: hue-rotate(0deg);
+  -moz-filter: hue-rotate(0deg);
+  -o-filter: hue-rotate(0deg);
+  filter: hue-rotate(0deg);
+}
+
+.effect:hover{
+  -webkit-filter: hue-rotate(180deg);
+  -ms-filter: hue-rotate(180deg);
+  -moz-filter: hue-rotate(180deg);
+  -o-filter: hue-rotate(180deg);
+  filter: hue-rotate(180deg);
+}</pre>
+				    </div>
+		        	<h6>Show effect onhover, animated</h6>
+			        <div class="col hover-hue-rotate-anim">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: hue-rotate(deg);
+  -ms-filter: hue-rotate(0deg);
+  -moz-filter: hue-rotate(0deg);
+  -o-filter: hue-rotate(0deg);
+  filter: hue-rotate(0deg);
+  -webkit-transition: 0.5s linear all;
+  -moz-transition: 0.5s linear all;
+  -o-transition: 0.5s linear all;
+  -ms-transition: 0.5s linear all;
+  transition: 0.5s linear all;
+}
+
+.effect:hover{
+  -webkit-filter: hue-rotate(180deg);
+  -ms-filter: hue-rotate(180deg);
+  -moz-filter: hue-rotate(180deg);
+  -o-filter: hue-rotate(180deg);
+  filter: hue-rotate(180deg);
+}</pre>
+				    </div>
+		        	<h6>Control the effect</h6>
+			        <div class="col hover-hue-rotate-control">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: hue-rotate(deg);
+  -ms-filter: hue-rotate(0deg);
+  -moz-filter: hue-rotate(0deg);
+  -o-filter: hue-rotate(0deg);
+  filter: hue-rotate(0deg);
+}</pre>
+					<div class="slider clearfix"></div>
+				    </div>
+		        </div>
+		        <div class="code"><span class="codeopen">i</span>
+			        <p>For me the coolest of the available filters (especially with the animated effect), it shifts the colors around to make the element look completely different. This effect takes the original color as 'zero-point' and rotates it by an angle to shift all the colors in the image 'angle' on a '<a href="http://www.ficml.org/jemimap/style/color/wheel.html" target="_blank">colorwheel</a>'. The input ranges from 0deg to 360deg where both 0 and 360 will ouput the original color.</p>
+		        </div>
+		    </article>
+		    
+		    
+		    
+	        <article class="Invert">
+		        <div class="top-examples">
+		        	<h6>Without effect</h6>
+			        <div class="col no-invert">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: none;
+  -ms-filter: none;
+  -moz-filter: none;
+  -o-filter: none;
+  filter: none;
+}</pre>
+			        </div>
+		        	<h6>With effect</h6>
+			        <div class="col full-invert">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: invert(1);
+  -ms-filter: invert(1);
+  -moz-filter: invert(1);
+  -o-filter: invert(1);
+  filter: invert(1);
+}</pre>
+				    </div>
+		        	<h6>Show effect onhover</h6>
+			        <div class="col hover-invert">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: invert(0);
+  -ms-filter: invert(0);
+  -moz-filter: invert(0);
+  -o-filter: invert(0);
+  filter: invert(0);
+}
+
+.effect:hover{
+  -webkit-filter: invert(1);
+  -ms-filter: invert(1);
+  -moz-filter: invert(1);
+  -o-filter: invert(1);
+  filter: invert(1);
+}</pre>
+				    </div>
+		        	<h6>Show effect onhover, animated</h6>
+			        <div class="col hover-invert-anim">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: invert(0);
+  -ms-filter: invert(0);
+  -moz-filter: invert(0);
+  -o-filter: invert(0);
+  filter: invert(0);
+  -webkit-transition: 0.5s linear all;
+  -moz-transition: 0.5s linear all;
+  -o-transition: 0.5s linear all;
+  -ms-transition: 0.5s linear all;
+  transition: 0.5s linear all;
+}
+
+.effect:hover{
+  -webkit-filter: invert(1);
+  -ms-filter: invert(1);
+  -moz-filter: invert(1);
+  -o-filter: invert(1);
+  filter: invert(1);
+}</pre>
+				    </div>
+		        	<h6>Control the effect</h6>
+			        <div class="col hover-invert-control">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: invert(0);
+  -ms-filter: invert(0);
+  -moz-filter: invert(0);
+  -o-filter: invert(0);
+  filter: invert(0);
+}</pre>
+					<div class="slider clearfix"></div>
+				    </div>
+		        </div>
+		        <div class="code"><span class="codeopen">i</span>
+			        <p>If you want to recreate a negative effect like a photo back from the old film, this is the effect you need. Values range between 0 and 1 where 0 is the original and 1 is the inverted version. When using values in-between the image will go from the original colors to grey until 0.5 and then go from grey to the inverted colors. Using this in combination with a drop-shadow will invert the shadow as well. If you're more comfortable using percentages, that's possible as well, you can use 0% till 100% or 0 till 1. Both will work. </p>
+		        </div>
+		    </article>
+	        
+	        
+	        
+	        <article class="Opacity">
+		        <div class="top-examples">
+		        	<h6>Without effect</h6>
+			        <div class="col no-opacity">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: none;
+  -ms-filter: none;
+  -moz-filter: none;
+  -o-filter: none;
+  filter: none;
+}</pre>
+			        </div>
+		        	<h6>With effect</h6>
+			        <div class="col full-opacity">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: opacity(0.1);
+  -ms-filter: opacity(0.1);
+  -moz-filter: opacity(0.1);
+  -o-filter: opacity(0.1);
+  filter: opacity(0.1);
+}</pre>
+				    </div>
+		        	<h6>Show effect onhover</h6>
+			        <div class="col hover-opacity">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: opacity(1);
+  -ms-filter: opacity(1);
+  -moz-filter: opacity(1);
+  -o-filter: opacity(1);
+  filter: opacity(1);
+}
+
+.effect:hover{
+  -webkit-filter: opacity(0);
+  -ms-filter: opacity(0);
+  -moz-filter: opacity(0);
+  -o-filter: opacity(0);
+  filter: opacity(0);
+}</pre>
+				    </div>
+		        	<h6>Show effect onhover, animated</h6>
+			        <div class="col hover-opacity-anim">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: opacity(1);
+  -ms-filter: opacity(1);
+  -moz-filter: opacity(1);
+  -o-filter: opacity(1);
+  filter: opacity(1);
+  -webkit-transition: 0.5s linear all;
+  -moz-transition: 0.5s linear all;
+  -o-transition: 0.5s linear all;
+  -ms-transition: 0.5s linear all;
+  transition: 0.5s linear all;
+}
+
+.effect:hover{
+  -webkit-filter: opacity(0);
+  -ms-filter: opacity(0);
+  -moz-filter: opacity(0);
+  -o-filter: opacity(0);
+  filter: opacity(0);
+}</pre>
+				    </div>
+		        	<h6>Control the effect</h6>
+			        <div class="col hover-opacity-control">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: opacity(1);
+  -ms-filter: opacity(1);
+  -moz-filter: opacity(1);
+  -o-filter: opacity(1);
+  filter: opacity(1);
+}</pre>
+					<div class="slider clearfix"></div>
+				    </div>
+		        </div>
+		        <div class="code"><span class="codeopen">i</span>
+			        <p>So far, this seems to do exactly the same as opacity: value. I couldn't find a difference between this filter and the opacity value itself. Value range is from 0 to 1, where 0 is completely transparent and 1 is completely visible. If you're more comfortable using percentages, that's possible as well, you can use 0% till 100% or 0 till 1 (and all values in-between). Both will work.</p>
+		        </div>
+		   </article>
+		   
+		   
+	        <article class="Saturate">
+		        <div class="top-examples">
+		        	<h6>Without effect</h6>
+			        <div class="col no-saturate">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: none;
+  -ms-filter: none;
+  -moz-filter: none;
+  -o-filter: none;
+  filter: none;
+}</pre>
+			        </div>
+		        	<h6>With effect</h6>
+			        <div class="col full-saturate">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: saturate(10);
+  -ms-filter: saturate(10);
+  -moz-filter: saturate(10);
+  -o-filter: saturate(10);
+  filter: saturate(10);
+}</pre>
+				    </div>
+		        	<h6>Show effect onhover</h6>
+			        <div class="col hover-saturate">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: saturate(1);
+  -ms-filter: saturate(1);
+  -moz-filter: saturate(1);
+  -o-filter: saturate(1);
+  filter: saturate(1);
+}
+
+.effect:hover{
+  -webkit-filter: saturate(10);
+  -ms-filter: saturate(10);
+  -moz-filter: saturate(10);
+  -o-filter: saturate(10);
+  filter: saturate(10);
+}</pre>
+				    </div>
+		        	<h6>Show effect onhover, animated</h6>
+			        <div class="col hover-saturate-anim">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: saturate(1);
+  -ms-filter: saturate(1);
+  -moz-filter: saturate(1);
+  -o-filter: saturate(1);
+  filter: saturate(1);
+  -webkit-transition: 0.5s linear all;
+  -moz-transition: 0.5s linear all;
+  -o-transition: 0.5s linear all;
+  -ms-transition: 0.5s linear all;
+  transition: 0.5s linear all;
+}
+
+.effect:hover{
+  -webkit-filter: saturate(10);
+  -ms-filter: saturate(10);
+  -moz-filter: saturate(10);
+  -o-filter: saturate(10);
+  filter: saturate(10);
+}</pre>
+				    </div>
+		        	<h6>Control the effect</h6>
+			        <div class="col hover-saturate-control">
+				        <div class="effect"></div>
+				        <pre class="styles">.effect{
+  -webkit-filter: saturate(1);
+  -ms-filter: saturate(1);
+  -moz-filter: saturate(1);
+  -o-filter: saturate(1);
+  filter: saturate(1);
+}</pre>
+					<div class="slider clearfix"></div>
+				    </div>
+		        </div>
+		        <div class="code"><span class="codeopen">i</span>
+			        <p>This applies a color saturation effect to the colors, almost the same as using the Hue/Saturation (Image > Adjustments > Hue/Saturation...) option in photoshop, with one difference, the max is not 100%. Same as with the contrast filter, I couldn't find an end value so used 10 in my example. 1 is the normal value, going to zero will make the image grayscaled, going up will add more and more saturation. If you're more comfortable using percentages, that's possible as well, you can use 0% till 'x'% or 0 till 'x' (and all values in-between). Both will work.</p>
+		        </div>
+		   </article>
+        </section>
+
+
+
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.0.min.js"><\/script>')</script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>
+        <script src="https://raw.github.com/furf/jquery-ui-touch-punch/master/jquery.ui.touch-punch.min.js"></script>
+        <script src="http://houkedekwant.com/boilerplate/js/plugins.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
