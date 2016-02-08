@@ -84,17 +84,17 @@ jQuery(document).ready(function() {
 	});
 	
 	//Enable custom code output	
-	 jQuery("pre.htmlCode").snippet("html", {
-	    style: "bright"
-	  });
+	 // jQuery("pre.htmlCode").snippet("html", {
+	 //    style: "bright"
+	 //  });
 	
-	  jQuery("pre.styles, div.htmlStyles").snippet("css", {
-	    style: "bright"
-	  });
+	 //  jQuery("pre.styles, div.htmlStyles").snippet("css", {
+	 //    style: "bright"
+	 //  });
 	
-	  jQuery("pre.js").snippet("javascript", {
-	    style: "bright"
-	  });
+	 //  jQuery("pre.js").snippet("javascript", {
+	 //    style: "bright"
+	 //  });
   
   
   
