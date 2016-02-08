@@ -373,7 +373,7 @@ section.examples{
 		}
 	
 		section article .col .effect{
-			background: url(http://houke.github.io/css3-filter-experiments/assets/images/TWC/5.jpg) no-repeat center center;
+			background: url(http://houke.github.io/css3-filter-experiments/images/TWC/5.jpg) no-repeat center center;
 			display: block;
 			height: 200px;
 			width: 200px;
@@ -952,19 +952,19 @@ section.examples{
 			cursor: pointer;
 		}
 		#images li.img1{
-			background: url(http://houke.github.io/css3-filter-experiments/assets/images/TWC/5.jpg) no-repeat center center;
+			background: url(http://houke.github.io/css3-filter-experiments/images/TWC/5.jpg) no-repeat center center;
 		}
 	
 		#images li.img2{
-			background: url(http://houke.github.io/css3-filter-experiments/assets/images/TWC/1.jpg) no-repeat center center;
+			background: url(http://houke.github.io/css3-filter-experiments/images/TWC/1.jpg) no-repeat center center;
 		}
 	
 		#images li.img3{
-			background: url(http://houke.github.io/css3-filter-experiments/assets/images/TWC/2.jpg) no-repeat center center;
+			background: url(http://houke.github.io/css3-filter-experiments/images/TWC/2.jpg) no-repeat center center;
 		}
 	
 		#images li.img4{
-			background: url(http://houke.github.io/css3-filter-experiments/assets/images/Nikita/1.jpg) no-repeat center center;
+			background: url(http://houke.github.io/css3-filter-experiments/images/Nikita/1.jpg) no-repeat center center;
 		}
 
 .col .slider{

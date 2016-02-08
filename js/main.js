@@ -30,24 +30,24 @@ jQuery(document).ready(function() {
 	});
 	jQuery('#images ul li.img1').click(function(){
 		jQuery('section article .col .effect').css({
-			'background-image':'url(http://houke.github.io/css3-filter-experiments/assets/images/TWC/5.jpg)'
+			'background-image':'url(http://houke.github.io/css3-filter-experiments/images/TWC/5.jpg)'
 		});		
 	});
 	
 	jQuery('#images ul li.img2').click(function(){
 		jQuery('section article .col .effect').css({
-			'background-image':'url(http://houke.github.io/css3-filter-experiments/assets/images/TWC/1.jpg)'
+			'background-image':'url(http://houke.github.io/css3-filter-experiments/images/TWC/1.jpg)'
 		});
 	});
 	
 	jQuery('#images ul li.img3').click(function(){
 		jQuery('section article .col .effect').css({
-			'background-image':'url(http://houke.github.io/css3-filter-experiments/assets/images/TWC/2.jpg)'
+			'background-image':'url(http://houke.github.io/css3-filter-experiments/images/TWC/2.jpg)'
 		});
 	});
 	jQuery('#images ul li.img4').click(function(){
 		jQuery('section article .col .effect').css({
-			'background-image':'url(http://houke.github.io/css3-filter-experiments/assets/images/Nikita/1.jpg)'
+			'background-image':'url(http://houke.github.io/css3-filter-experiments/images/Nikita/1.jpg)'
 		});
 	});
 	jQuery('#images input[type="submit"]').click(function(){
